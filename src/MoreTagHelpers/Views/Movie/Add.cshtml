@@ -1,0 +1,39 @@
+﻿@model MoreTagHelpers.ViewModels.AddMovieVM
+@{
+    // ViewBag.Title = "Home Page";
+}
+
+<h2>Add a Movie</h2>
+<a asp-action="Index" asp-controller="Movie">Back to Movies</a>
+<form asp-action="Add" asp-anti-forgery="true" asp-controller="Movie">
+    <div>
+        <div>
+            <label asp-for="Title"></label>
+            <input type="text" asp-for="Title" />
+            <span asp-validation-for="Title"></span>
+        </div>
+        <div>
+            <label asp-for="ReleaseDate"></label>
+            <input type="date" asp-for="ReleaseDate" />
+            <span asp-validation-for="ReleaseDate"></span>
+        </div>
+        <div>
+            <label asp-for="RunningTime"></label>
+            <input type="number" asp-for="RunningTime" />
+            <span asp-validation-for="RunningTime"></span>
+        </div>
+        <div>
+            <label asp-for="Description"></label>
+            <textarea asp-for="Description"></textarea>
+            <span asp-validation-for="Description"></span>
+        </div>
+        <div>
+            <label asp-for="SelectedGenre"></label>
+            <select asp-for="SelectedGenre" asp-items="Model.AllGenres"></select>
+            <span asp-validation-for="SelectedGenre"></span>
+        </div>
+        <div>
+            <input type="submit" value="Save" />
+        </div>
+    </div>
+</form>

@@ -1,0 +1,48 @@
+﻿@model List<MoreTagHelpers.Models.Movie>
+@{
+    // ViewBag.Title = "Home Page";
+}
+
+<h3>Movies</h3>
+
+<div>
+    <a asp-action="Add" asp-controller="Movie">Add a Movie</a>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                Release Date
+            </th>
+            <th>
+                Running Time
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var movie in Model)
+        {
+            <tr>
+                <td>
+                    @movie.ID
+                </td>
+                <td>
+                    @movie.Title
+                </td>
+                <td>
+                    @movie.ReleaseDate.ToShortDateString()
+                </td>
+                <td>
+                    @movie.RunningTime Minutes
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
