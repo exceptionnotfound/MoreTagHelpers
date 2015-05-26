@@ -1,10 +1,7 @@
 ﻿@model MoreTagHelpers.ViewModels.AddMovieVM
-@{
-    // ViewBag.Title = "Home Page";
-}
 
 <h2>Add a Movie</h2>
-<a asp-action="Index" asp-controller="Movie">Back to Movies</a>
+<a asp-action="Index" asp-controller="Movie" asp->Back to Movies</a>
 <form asp-action="Add" asp-anti-forgery="true" asp-controller="Movie">
     <div>
         <div>
